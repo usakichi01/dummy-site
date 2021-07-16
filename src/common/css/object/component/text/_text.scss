@@ -1,0 +1,57 @@
+.text {
+  &-lead {
+    font-size: 3.4rem;
+    font-weight: bold;
+    margin-bottom: 1.8em;
+
+    @include sp {
+      font-size: 1.8rem;
+      margin-bottom: 1.4em;
+    }
+
+    &-block {
+      margin: 50px auto;
+      text-align: center;
+      max-width: 830px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      @include sp {
+        margin: 25px auto;
+        text-align: left;
+      }
+    }
+  }
+
+  &-note {
+    font-size: 1.2rem;
+  }
+
+  & + & {
+    margin-top: 1.5em;
+
+    @include sp {
+      margin-top: 1.7em;
+    }
+  }
+
+  & + &-box {
+    margin-top: 1.5em;
+
+    @include sp {
+      margin-top: 1.7em;
+    }
+  }
+
+  &-box {
+    & + & {
+      margin-top: 1.5em;
+
+      @include sp {
+        margin-top: 1.7em;
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.heading-lv3 {
+  font-size: 2.4rem;
+  line-height: (44/24);
+  font-weight: bold;
+  color: $color-dark;
+  padding-left: 20px;
+  position: relative;
+
+  @include pc {
+    margin-bottom: 10px;
+  }
+
+  @include sp {
+    font-size: 2.2rem;
+    line-height: (34/22);
+    padding-left: 15px;
+    margin-bottom: 20px;
+  }
+
+  &::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 8px;
+    height: 90%;
+    background-color: $color-bg03;
+
+    @include sp {
+      width: 6px;
+      top: 3px;
+    }
+  }
+}
+
+.partner {
+  .heading-lv3 {
+    &::before {
+      background-color: $color-partner-bg02;
+    }
+  }
+}

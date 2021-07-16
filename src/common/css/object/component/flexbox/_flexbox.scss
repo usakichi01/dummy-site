@@ -1,0 +1,86 @@
+.flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -7px;
+
+  @include tb {
+    margin: 0 -5px;
+  }
+
+  @include sp {
+    margin: 0 -4px;
+  }
+
+  &.-col4 {
+    .flexbox-col {
+      width: calc(100% / 4);
+      padding: 0 7px;
+
+      @include tb {
+        padding: 0 5px;
+      }
+
+      @include sp {
+        width: calc(100% / 2);
+        padding: 0 4px;
+      }
+
+      &:nth-child(n + 5) {
+        @include pc {
+          margin-top: 53px;
+        }
+      }
+
+      &:nth-child(n + 3) {
+        @include sp {
+          margin-top: 22px;
+        }
+      }
+    }
+  }
+
+  &.-col3 {
+    .flexbox-col {
+      width: calc(100% / 3);
+      padding: 0 7px;
+
+      @include tb {
+        padding: 0 5px;
+      }
+
+      @include sp {
+        width: 100%;
+        padding: 0 4px;
+      }
+
+      &:nth-child(n + 4) {
+        @include pc {
+          margin-top: 53px;
+        }
+      }
+
+      &:nth-child(n + 2) {
+        @include sp {
+          margin-top: 18px;
+        }
+      }
+    }
+  }
+
+  &-col {
+    .image-box {
+      background-color: $color-light;
+      height: 100%;
+      padding: 10px;
+
+      .image {
+        & + .text {
+          margin-top: 10px 10px 15px;
+          text-align: justify;
+          text-justify: inter-ideograph;
+          text-justify: inter-character;
+        }
+      }
+    }
+  }
+}

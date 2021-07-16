@@ -1,0 +1,21 @@
+@mixin interview-label {
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  padding: 16px;
+  color: #ffffff;
+  line-height: 1.5;
+  z-index: 2;
+
+  @include sp {
+    padding: 13px 16px;
+  }
+
+  &.-male {
+    background-color: $color-sex-male;
+  }
+
+  &.-female {
+    background-color: $color-sex-female;
+  }
+}

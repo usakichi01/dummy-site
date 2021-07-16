@@ -1,0 +1,36 @@
+.link {
+  font-weight: bold;
+
+  &.-arrow {
+    position: relative;
+    z-index: 1;
+
+    &:hover {
+      color: $color-bg03;
+
+      span {
+        &::after {
+          background: center / contain no-repeat url(#{$img-path}icon_arrow_orange.png);
+        }
+      }
+    }
+
+    span {
+      position: relative;
+      padding-right: 16px;
+
+      &::after {
+        transition: 0.15s ease-in-out;
+        display: block;
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: .65em;
+        transform: translateY(50%);
+        width: 13px;
+        height: 13px;
+        background: center / contain no-repeat url(#{$img-path}icon_arrow_black.png);
+      }
+    }
+  }
+}

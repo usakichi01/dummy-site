@@ -1,0 +1,343 @@
+.header {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 72px;
+  margin: 20px 40px;
+
+  @include tb {
+    margin: 20px 10px;
+  }
+
+  @include sp {
+    margin: 0;
+    height: 56px;
+  }
+
+  &-inner {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    background-color: $color-light;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+
+    @include pc {
+      border-radius: 10px;
+    }
+
+    @include sp {
+      padding-left: 10px;
+    }
+  }
+
+  &-logo {
+    margin-right: auto;
+    line-height: 1;
+    padding: 10px 20px 10px 40px;
+
+    & > a {
+      align-items: center;
+
+      @include sp {
+        flex-direction: column;
+      }
+    }
+
+    @include sp {
+      padding: 8px 0;
+    }
+
+    .-corporate {
+      margin-bottom: 2px;
+
+      @include tb {
+        max-width: 150px;
+      }
+
+      @include sp {
+        max-width: 125px;
+      }
+    }
+
+    .-recruit {
+      margin: 4px 0 0 10px;
+
+      @include tb {
+        max-width: 100px;
+      }
+
+      @include sp {
+        max-width: 81px;
+        margin: 0 0 0 0;
+      }
+    }
+  }
+
+  &-entry {
+    margin-left: auto;
+    align-self: stretch;
+    margin-left: 24px;
+    background-color: $color-main-orange;
+    cursor: pointer;
+
+    @include pc {
+      min-width: 125px;
+    }
+
+    @include tb {
+      margin-left: 0;
+    }
+
+    @include sp {
+      margin-left: 8px;
+      min-width: 80px;
+    }
+
+    a {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: $color-dark;
+      line-height: (22/15);
+      padding: 0 20px;
+      position: relative;
+      z-index: 1;
+
+      @include pc {
+        justify-content: center;
+      }
+
+      @include infinite-shine;
+      @include hover-border($color-dark);
+
+      @include sp {
+        font-size: 1.2rem;
+        line-height: (19/12);
+        padding: 0 10px;
+      }
+    }
+  }
+
+  &-ham {
+    &-menu {
+      z-index: 5;
+      position: relative;
+      width: 32px;
+      height: 22px;
+      cursor: pointer;
+      height: 100%;
+      width: 100px;
+      background-color: $color-bg04;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+      padding: 10px;
+
+      @include sp {
+        width: 60px;
+        padding: 7px 10px;
+      }
+
+      &-icon {
+        position: relative;
+        width: 28px;
+        height: 24px;
+        display: block;
+        margin-top: 5px;
+
+        @include sp {
+          width: 31px;
+          height: 21px;
+        }
+
+        &::before, &::after {
+          display: block;
+          content: '';
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          border-radius: 4px;
+          background-color: $color-light;
+          transition: 0.3s ease-in-out;
+        }
+
+        &::before {
+          top: 0;
+        }
+
+        &::after {
+          bottom: 0;
+        }
+
+        span {
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          border-radius: 4px;
+          background-color: $color-light;
+          top: 50%;
+          transform: translateY(-50%);
+          transition: 0.3s ease-in-out;
+        }
+      }
+
+      &-text {
+        font-size: 1.2rem;
+        color: $color-light;
+        font-family: $font-opensans;
+        font-weight: bold;
+        line-height: 1;
+
+        @include sp {
+          font-size: 1rem;
+        }
+
+        &.-close {
+          display: none;
+        }
+      }
+
+      &.is-active {
+        background-color: transparent;
+
+        @include pc {
+          margin-top: 20px;
+        }
+
+        .header-ham-menu {
+          &-icon {
+            &::before {
+              @include common-active($opacity:1);
+
+              width: 110%;
+
+              @include sp {
+                @include common-active($translateY:9px,$opacity:1);
+
+                width: 105%;
+              }
+            }
+
+            &::after {
+              @include common-active($translateY:-11px,$rotate:45deg,$opacity:1);
+
+              width: 110%;
+
+              @include sp {
+                @include common-active($translateY:-9px,$rotate:45deg,$opacity:1);
+
+                width: 105%;
+              }
+            }
+
+            span {
+              @include common-active($translateY:unset,$rotate:unset,$opacity:0);
+
+              left: 50%;
+            }
+          }
+
+          &-text {
+            display: none;
+
+            &.-close {
+              display: block;
+              font-size: 1.5rem;
+              line-height: (22/15);
+
+              @include sp {
+                font-size: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-nav {
+    &-wrap {
+      width: 100%;
+      height: 100vh;
+      background-color: $color-bg04;
+      position: fixed;
+      left: 0;
+      top: 0;
+      padding: 30px;
+      display: none;
+      overflow-y: auto;
+      z-index: 1;
+
+      @include sp {
+        padding: 10px 0;
+      }
+
+      .button-block {
+        margin: 49px 0;
+        text-align: center;
+
+        @include sp {
+          margin: 28px 14px;
+        }
+      }
+
+      &.is-open {
+        display: block;
+      }
+
+      .header-logo {
+        & > a {
+          @include sp {
+            flex-direction: row;
+
+            .-recruit {
+              margin: 1px 0 0 7px;
+            }
+          }
+        }
+      }
+    }
+
+    &-top {
+      margin: 0 10px;
+    }
+  }
+
+  .button-entry {
+    box-shadow: 5px 5px 0 0 rgba($color-light, .7);
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 5px 9px 10px 0 rgba($color-light, .7);
+    }
+  }
+}
+
+.partner {
+  .header {
+    &-entry {
+      background-color: $color-partner-main;
+
+      @include pc {
+        width: 188px;
+      }
+    }
+
+    .button-entry {
+      box-shadow: 5px 5px 0 0 rgba($color-partner-accent01, 1) !important;
+
+      &:hover {
+        box-shadow: 5px 9px 10px 0 rgba($color-partner-accent01, 1) !important;
+      }
+    }
+  }
+}

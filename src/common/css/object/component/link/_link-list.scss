@@ -1,0 +1,60 @@
+.link-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  &.col2-box {
+    margin: 0 -12px;
+
+    .link {
+      &-list-item {
+        width: calc(100% / 2);
+        padding: 0 12px;
+
+        @include sp {
+          width: 100%;
+          text-align: center;
+        }
+
+        & + .link-list-item {
+          @include sp {
+            margin-top: 28px;
+          }
+        }
+      }
+    }
+  }
+
+  &.col4-box {
+    margin: 0 -12px;
+
+    @include sp {
+      margin: 0 -9px;
+    }
+
+    .link {
+      max-width: none;
+
+      &-list-item {
+        width: calc(100% / 4);
+        padding: 0 12px;
+
+        @include sp {
+          width: calc(100% / 2);
+          padding: 0 9px;
+        }
+
+        &:nth-child(n + 5) {
+          @include pc {
+            margin-top: 24px;
+          }
+        }
+
+        &:nth-child(n + 3) {
+          @include sp {
+            margin-top: 18px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,107 @@
+@mixin hover-opacity {
+  transition: opacity $trantion-time-normal $easing-normal;
+
+  &:hover {
+    opacity: $opacity;
+  }
+  @content;
+}
+
+@mixin hover-color($color) {
+  transition: opacity $trantion-time-normal $easing-normal;
+
+  &:hover {
+    color: $color;
+  }
+  @content;
+}
+
+@mixin hover-shine($duration) {
+  transition: opacity $trantion-time-normal $easing-normal;
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: -75%;
+    z-index: 2;
+    display: block;
+    content: '';
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba($color-light, 0) 0%, rgba($color-light, .3)  100%);
+    transform: skewX(-25deg);
+  }
+
+  &:hover {
+    &::before {
+      animation: $duration shine;
+    }
+  }
+  @content;
+}
+
+@mixin hover-underline {
+  .underline {
+    background: linear-gradient(transparent 70%, $color-accent01 0%) 0 100%/0 100% no-repeat;
+    transition: background .5s ease-in-out;
+    display: inline;
+  }
+
+  &:hover {
+    .underline {
+      background-size: 100% 100%;
+    }
+  }
+
+  @content;
+}
+
+@mixin hover-border($line-color) {
+  & > span {
+    display: block;
+
+    &::before, &::after {
+      position: absolute;
+      z-index: 2;
+      content: '';
+      width: 0;
+      height: 0;
+      border: 2px solid transparent;
+    }
+
+    &::before {
+      top: 0;
+      left: 0;
+    }
+
+    &::after {
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &:hover {
+    & > span {
+      &::before,&::after {
+        width: 100%;
+        height: 100%;
+      }
+
+      &::before {
+        border-bottom-color: $line-color;
+        border-left-color: $line-color;
+        transition: height .3s, width .3s .3s;
+      }
+
+      &::after {
+        border-top-color: $line-color;
+        border-right-color: $line-color;
+        transition: height .3s, width .3s .3s;
+      }
+    }
+  }
+
+  @content;
+}

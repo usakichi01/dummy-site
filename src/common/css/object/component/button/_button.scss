@@ -1,0 +1,238 @@
+%button {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.15s ease-in-out;
+}
+
+.button {
+  @extend %button;
+
+  line-height: (22/16);
+  background-color: $color-dark;
+  color: $color-light;
+  padding: 17px 10px;
+  font-family: $font-opensans;
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  @include pc {
+    max-width: 200px;
+  }
+
+  &::before {
+    content: '';
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: width 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    width: 0;
+    z-index: -1;
+    left: 0;
+  }
+
+  &:hover {
+    &::before {
+      height: 100%;
+      right: inherit;
+      width: 100%;
+      background-color: $color-accent01;
+      right: 0;
+      transform-origin: right;
+    }
+  }
+
+  &.-arrow {
+    span {
+      position: relative;
+      padding-right: 16px;
+
+      &::after {
+        transition: 0.15s ease-in-out;
+        display: block;
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 13px;
+        height: 13px;
+        background: center / contain no-repeat url(#{$img-path}icon_arrow_white.png);
+      }
+    }
+
+    &-down {
+      padding: 17px 20px 17px 15px;
+
+      @include sp {
+        padding: 12px 8px 12px 9px;
+      }
+
+      span {
+        width: 100%;
+        position: relative;
+        padding-right: 16px;
+        text-align: left;
+
+        &::after {
+          transition: 0.15s ease-in-out;
+          display: block;
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%) rotate(90deg);
+          width: 13px;
+          height: 13px;
+          background: center / contain no-repeat url(#{$img-path}icon_arrow_orange.png);
+        }
+      }
+
+      &:hover {
+        span {
+          &::after {
+            background: center / contain no-repeat url(#{$img-path}icon_arrow_white.png);
+          }
+        }
+      }
+    }
+  }
+
+  &.-ext {
+    span {
+      width: 100%;
+      position: relative;
+      padding-right: 19px;
+
+      &::after {
+        transition: 0.15s ease-in-out;
+        display: block;
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 15px;
+        height: 13px;
+        background: center / contain no-repeat url(#{$img-path}icon_ext_gray.png);
+      }
+    }
+
+    &:hover {
+      span {
+        &::after {
+          background: center / contain no-repeat url(#{$img-path}icon_ext_white.png);
+        }
+      }
+    }
+
+    &-down {
+      border: none;
+    }
+  }
+
+  &.-sm {
+    padding: 11px 10px;
+    max-width: 140px;
+  }
+
+  &.-lg {
+    padding: 21px 10px;
+    max-width: 360px;
+  }
+
+  &.-yellow {
+    background-color: $color-bg02;
+    color: #000000;
+
+    &:hover {
+      color: $color-light;
+    }
+
+    &.-arrow {
+      span {
+        &::after {
+          background: center / contain no-repeat url(#{$img-path}icon_arrow_black.png);
+        }
+      }
+
+      &:hover {
+        span {
+          &::after {
+            background: center / contain no-repeat url(#{$img-path}icon_arrow_white.png);
+          }
+        }
+      }
+    }
+  }
+
+  &.-white {
+    background-color: $color-light;
+    color: #000000;
+    border: 1px solid $color-gray;
+
+    &:hover {
+      color: $color-light;
+    }
+
+    &.-arrow {
+      padding: 17px 20px 17px 30px;
+      min-height: 102px;
+
+      @include sp {
+        min-height: 80px;
+        padding: 12px 20px 12px 30px;
+      }
+
+      span {
+        width: 100%;
+
+        &::after {
+          background: center / contain no-repeat url(#{$img-path}icon_arrow_orange.png);
+        }
+      }
+
+      &:hover {
+        span {
+          &::after {
+            background: center / contain no-repeat url(#{$img-path}icon_arrow_white.png);
+          }
+        }
+      }
+
+      &-down {
+        border: none;
+      }
+    }
+  }
+}
+
+.partner {
+  .button {
+    &:hover {
+      color: $color-dark;
+
+      &::before {
+        background-color: $color-partner-accent01;
+        color: $color-dark;
+      }
+    }
+
+    &.-arrow {
+      &:hover {
+        span {
+          &::after {
+            background: center / contain no-repeat url(#{$img-path}icon_arrow_black.png);
+          }
+        }
+      }
+    }
+  }
+}

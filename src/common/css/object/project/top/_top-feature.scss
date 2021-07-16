@@ -1,0 +1,103 @@
+.top-feature {
+  padding-top: 50px;
+
+  @include pc {
+    margin-top: 110px;
+  }
+
+  @include sp {
+    padding-top: 30px;
+  }
+
+  .content-inner {
+    position: relative;
+
+    @include sp {
+      padding: 0;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: -1;
+      background: center / contain no-repeat url(/assets/images/recruit/top_bg_shape01.png);
+      width: 738px;
+      padding-bottom: 519px;
+      top: 15px;
+      left: -230px;
+
+      @include sp {
+        width: (600 / 375 * 100%);
+        top: 160px;
+        left: -225px;
+      }
+    }
+  }
+
+  &-inner {
+    background-color: $color-bg02;
+    padding: 50px;
+    text-align: center;
+    position: relative;
+
+    @include sp {
+      padding: 15px;
+    }
+
+    &::before, &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: -1;
+    }
+
+    &::before {
+      background: center / contain no-repeat url(#{$img-path}bg_accent_line01.png);
+      width: 222px;
+      padding-bottom: 202px;
+      left: -130px;
+      top: 45px;
+    }
+
+    &::after {
+      background: center / contain no-repeat url(#{$img-path}bg_accent_line02.png);
+      width: (296px/2);
+      padding-bottom: (348px/2);
+      top: -17px;
+      right: -88px;
+    }
+  }
+
+  &-title {
+    font-size: 4rem;
+    line-height: (34/18);
+    font-weight: bold;
+
+    @include sp {
+      margin-top: 15px;
+      font-size: 2rem;
+      line-height: (32/16);
+    }
+  }
+
+  &-lead {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 34px;
+
+    @include sp {
+      font-size: 1.6rem;
+      margin-top: 17px;
+    }
+  }
+
+  .button-block {
+    margin-top: 37px;
+    margin-bottom: 10px;
+
+    @include sp {
+      margin-bottom: 25px;
+    }
+  }
+}

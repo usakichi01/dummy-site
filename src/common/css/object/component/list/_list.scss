@@ -1,0 +1,11 @@
+.list {
+  &-item {
+    padding-left: 1em;
+    text-indent: -1em;
+
+    &.-num {
+      padding-left: 2em;
+      text-indent: -2em;
+    }
+  }
+}

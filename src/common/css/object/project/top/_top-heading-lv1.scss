@@ -1,0 +1,34 @@
+.top-heading-lv1 {
+  font-size: 4.8rem;
+  line-height: (65/48);
+  font-weight: bold;
+  color: $color-dark;
+  font-family: $font-opensans;
+  text-align: center;
+
+  &.-l {
+    text-align: left;
+
+    @include sp {
+      text-align: center;
+    }
+  }
+
+  @include sp {
+    font-size: 3.8rem;
+    line-height: (52/38);
+  }
+
+  .heading-sub {
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: (26/16);
+    display: block;
+    font-family: $font-family-base;
+
+    @include sp {
+      line-height: (21/16);
+      margin-top: 5px;
+    }
+  }
+}

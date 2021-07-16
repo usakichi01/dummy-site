@@ -1,0 +1,105 @@
+.box-has-image {
+  @include clearfix;
+
+  &.-reverse {
+    @include pc {
+      .box-title, .box-text {
+        float: left;
+        width: calc(100% - 50% - 30px);
+
+        & + .image-box {
+          margin-left: 30px;
+        }
+      }
+
+      .image-box {
+        float: right;
+
+        & + .box-text {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  .box-title {
+    @include pc {
+      float: right;
+      width: calc(100% - 50% - 30px);
+      margin-bottom: 10px;
+    }
+
+    @include sp {
+      margin-bottom: 20px;
+    }
+  }
+
+  .box-text {
+    text-align: justify;
+    text-justify: inter-ideograph;
+    text-justify: inter-character;
+
+    @include pc {
+      float: right;
+      width: calc(100% - 50% - 30px);
+
+      & + .image-box {
+        margin-left: 30px;
+      }
+    }
+
+    @include sp {
+      width: 100%;
+      margin: 10px auto;
+    }
+
+    & + .image-box {
+      margin-left: 30px;
+
+      @include sp {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .image-box {
+    margin-top: 3px;
+
+    @include pc {
+      float: left;
+      width: calc(50% - 15px);
+    }
+
+    @include sp {
+      width: 100%;
+    }
+
+    & + .box-text {
+      margin-left: 30px;
+
+      @include sp {
+        margin-left: 0;
+      }
+    }
+
+    .image {
+      & + .image {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  @include pc {
+    margin-bottom: 36px;
+  }
+
+  @include sp {
+    margin-bottom: 67px;
+  }
+
+  .button-block {
+    @include sp {
+      text-align: center;
+    }
+  }
+}

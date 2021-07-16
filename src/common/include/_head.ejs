@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+	<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# <%= page['type'] %>: http://ogp.me/ns/<%= page['type'] %>#">
+		<!-- meta -->
+		<meta charset="UTF-8">
+		<meta name="robots" content="index,follow">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="format-detection" content="telephone=no">
+		<meta name="description" content="<%= page['description'] %>" />
+		<meta name="keywords" content="<%= page['keywords'] %>" />
+
+		<!-- og -->
+		<meta property="og:title" content="<%= page['title'] %>｜ダミーサイト" />
+		<meta property="og:type" content="<%= page['type'] %>" />
+		<meta property="og:url" content="<%= page['url'] %>" />
+		<meta property="og:image" content="" />
+		<meta property="og:site_name" content="" />
+		<meta property="fb:app_id" content="" />
+		<title><%= page['title'] %>｜ダミーサイト</title>
+
+		<!-- icon -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+		<!-- seo -->
+		<link rel="canonical" href="<%= page['url'] %>">
+
+		<!-- stylesheet -->
+		<link rel="stylesheet" href="/common/css/common.css">
+
+		<!-- JavaScript -->
+		<script src="/common/js/vender/jquery.min.js" defer></script>
+		<script src="/common/js/common.js" defer></script>
+
+    <script>
+      (function(d) {
+        var config = {
+          kitId: 'hso3wec',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+	</head>
+
+	<body class="<%= page['class'] %>">
+		<noscript>
+			<p>このサイトではJavaScript機能をONにしてご利用ください。</p>
+		</noscript>
+    <div class="body-wrap">

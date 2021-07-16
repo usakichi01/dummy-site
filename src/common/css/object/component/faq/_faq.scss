@@ -1,0 +1,125 @@
+.faq {
+  position: relative;
+
+  &-box {
+    background-color: $color-light;
+    border-radius: 8px;
+    box-shadow: 0 5px 0 0 rgba($color-gray, 1);
+
+    @include sp {
+      box-shadow: 0 3px 0 0 rgba($color-gray, 1);
+    }
+
+    & + & {
+      margin-top: 25px;
+
+      @include sp {
+        margin-top: 17px;
+      }
+    }
+
+    &-answer, &-question {
+      position: relative;
+
+      .icon {
+        display: block;
+        content: '';
+        position: absolute;
+        left: 40px;
+        text-indent: -999em;
+        overflow: hidden;
+
+        @include sp {
+          left: 20px;
+        }
+      }
+    }
+
+    &-question {
+      font-weight: bold;
+      padding: 22px 60px 22px 94px;
+      cursor: pointer;
+      border-radius: 8px 8px 0 0;
+      font-size: 1.8rem;
+      line-height: (24/16);
+
+      @include sp {
+        padding: 22px 35px 22px 55px;
+        font-size: 1.6rem;
+      }
+
+      .icon {
+        width: 26px;
+        height: 43px;
+        top: 13px;
+        background: no-repeat url(#{$img-path}icon_question.png);
+
+        @include sp {
+          top: 10px;
+        }
+      }
+
+      &::before, &::after {
+        display: block;
+        content: '';
+        background-color: $color-dark;
+        position: absolute;
+        right: 31px;
+        width: 20px;
+        height: 3px;
+        border-radius: 25px;
+        top: 32px;
+        transition: .3s linear;
+
+        @include sp {
+          right: 13px;
+        }
+      }
+
+      &::after {
+        transform: rotate(-90deg);
+      }
+
+      &.is-open {
+        &::after {
+          transform: rotate(0);
+        }
+      }
+    }
+
+    &-answer {
+      padding-left: 94px;
+      border-radius: 0 0 8px 8px;
+      font-size: 1.6rem;
+      line-height: (32/16);
+      background-color: $color-gray-light;
+      text-align: justify;
+      text-justify: inter-ideograph;
+      text-justify: inter-character;
+
+      @include sp {
+        padding-left: 55px;
+        font-size: 1.4rem;
+      }
+
+      .icon {
+        width: 23px;
+        height: 43px;
+        top: 18px;
+        background: no-repeat url(#{$img-path}icon_answer.png);
+
+        @include sp {
+          top: 10px;
+        }
+      }
+
+      &-inner {
+        padding: 23px 50px 34px 0;
+
+        @include sp {
+          padding: 17px 35px 34px 0;
+        }
+      }
+    }
+  }
+}

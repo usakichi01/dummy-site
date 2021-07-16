@@ -1,0 +1,30 @@
+{
+	"template": {
+		"title": "テンプレート",
+		"description": "ディスクリプション",
+		"type": "website",
+		"class": "template",
+    "text": [
+      "トップ",
+      "テンプレート"
+    ],
+    "directory": [
+      "/template/",
+      ""
+    ],
+		"url": "https://www.dummy.co.jp/template/"
+	},
+  "top": {
+		"title": "TOP",
+		"description": "ディスクリプション",
+		"type": "website",
+		"class": "top",
+    "text": [
+      "トップ"
+    ],
+    "directory": [
+      ""
+    ],
+    "url": "https://www.dummy.co.jp"
+	}
+}

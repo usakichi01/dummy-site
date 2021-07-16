@@ -1,0 +1,25 @@
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "pageList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "トップ",
+      "item": "https://www.maxmouse.co.jp/recruit/"
+    <%_ if ( page['class'] !== 'top' ) { _%>
+    <%_ if ( page['text'].length > 0 ) { _%>
+    <%_ for (var i = 0; i < page['text'].length; i++) { _%>
+    },{
+      "@type": "ListItem",
+      "position": <%- i + 1 %>,
+      "name": "<%- page['text'][i] %>",
+      "item": "https://www.maxmouse.co.jp<%- page['directory'][i] %>"
+    <%_ } _%>
+    <%_ } _%>
+    <%_ } _%>
+    }]
+  }
+  </script>
+</body>
+</html>

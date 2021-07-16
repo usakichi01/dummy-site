@@ -1,0 +1,162 @@
+[data-effect=visible],[data-effect=fade-in], [data-effect=slide-up], [data-effect=slide-up-order] > li, [data-effect=slide-right-order] > li, [data-effect=slide-left], [data-effect=slide-right] {
+  opacity: 0;
+  transition: 1.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition-property: opacity, -webkit-transform;
+  transition-property: opacity, transform;
+  transition-property: opacity, transform, -webkit-transform;
+
+  &.is-visible {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+[data-effect=slide-right] {
+  transform: translateX(40px);
+}
+
+[data-effect=slide-left] {
+  transform: translateX(-40px);
+}
+
+[data-effect=slide-up] {
+  transform: translateY(-40px);
+}
+
+[data-effect=slide-right-order] > li {
+  transform: translateX(40px);
+}
+
+[data-effect=slide-up-order] > li {
+  transform: translateY(40px);
+}
+
+[data-effect-delay="3"] {
+  transition-delay: 0.3s !important;
+}
+
+[data-effect-delay="4"] {
+  transition-delay: 0.4s !important;
+}
+
+[data-effect-delay="5"] {
+  transition-delay: 0.5s !important;
+}
+
+[data-effect-delay-sp="3"] {
+  @include sp {
+    transition-delay: 0.3s !important;
+  }
+}
+
+@keyframes emphasis {
+  from {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(0.8);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  75% {
+    transform: scale(0.8);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes shine {
+  30% {
+    left: 125%;
+  }
+
+  100% {
+    left: 125%;
+  }
+}
+
+@keyframes fill-left {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes img-wrap {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes trans-none {
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(40px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(-40px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: .8s fade-in ease-in-out;
+}
+
+.slide-left {
+  animation: .8s slide-left ease-in-out;
+}
+
+.slide-right {
+  animation: .8s slide-right ease-in-out;
+}

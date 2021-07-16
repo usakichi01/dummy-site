@@ -1,0 +1,37 @@
+.top-about {
+  padding-top: 88px;
+  padding-bottom: 72px;
+
+  @include sp {
+    padding-top: 50px;
+    padding-bottom: 53px;
+  }
+
+  .content-inner {
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: -1;
+      background: center / contain no-repeat url(/assets/images/recruit/top_bg_shape02.png);
+      width: 800px;
+      padding-bottom: 544px;
+      bottom: -275px;
+      right: -190px;
+    }
+  }
+
+  &-card-list {
+    margin-top: 25px;
+
+    @include sp {
+      margin-top: 23px;
+    }
+
+    @include tb {
+      margin-top: 25px;
+    }
+  }
+}

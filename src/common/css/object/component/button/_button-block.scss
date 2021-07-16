@@ -1,0 +1,48 @@
+
+.button-block {
+  margin: 40px 0;
+
+  &.col2-box {
+    display: flex;
+
+    @include sp {
+      flex-direction: column;
+    }
+
+    .button {
+      display: block;
+
+      & + .button {
+        @include pc {
+          margin-left: 55px;
+        }
+
+        @include sp {
+          margin-top: 28px;
+        }
+      }
+    }
+  }
+
+  &.col4-box {
+    display: flex;
+
+    @include sp {
+      flex-direction: column;
+    }
+
+    .button {
+      display: block;
+
+      & + .button {
+        @include pc {
+          margin-left: 55px;
+        }
+
+        @include sp {
+          margin-top: 28px;
+        }
+      }
+    }
+  }
+}

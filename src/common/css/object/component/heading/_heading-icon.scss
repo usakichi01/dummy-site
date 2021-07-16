@@ -1,0 +1,12 @@
+.heading-icon {
+  display: inline-flex;
+
+  i {
+    flex-shrink: 0;
+    margin-right: 12px;
+
+    @include sp {
+      margin: 3px 9px 0 0;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.card-bg {
+  background-color: $color-light;
+  box-shadow: 5px 5px 10px 0 rgba($color-dark, .3);
+  width: 100%;
+
+  @include pc {
+    padding: 64px 80px;
+  }
+
+  @include tb {
+    padding: 45px 40px;
+  }
+
+  @include sp {
+    padding: 35px 10px;
+  }
+}

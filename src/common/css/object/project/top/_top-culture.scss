@@ -1,0 +1,126 @@
+.top-culture {
+  padding-bottom: 33px;
+  overflow: hidden;
+
+  @include sp {
+    padding-top: 48px;
+    padding-bottom: 0;
+  }
+
+  .content-inner {
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: -1;
+      background: center / contain no-repeat url(/assets/images/recruit/top_bg_shape03.png);
+      width: 1283px;
+      padding-bottom: 873px;
+      top: -490px;
+      left: -350px;
+    }
+  }
+
+  &-inner {
+    position: relative;
+
+    @include clearfix;
+
+    &::before {
+      position: absolute;
+      display: block;
+      content: '';
+      background: center / contain no-repeat url(#{$img-path}bg_accent_dot01.png);
+      width: 249px;
+      padding-bottom: 238px;
+      z-index: -1;
+      top: -151px;
+      left: 138px;
+
+      @include sp {
+        width: (178 /375 * 100%);
+        top: -73px;
+        left: auto;
+        right: 5px;
+      }
+    }
+
+    & > * {
+      @include pc {
+        width: (100%/2);
+
+        &:not(.top-culture-img) {
+          padding-right: 5%;
+        }
+      }
+    }
+  }
+
+  .fl-left, .fl-right {
+    @include sp {
+      float: none !important;
+    }
+  }
+
+  &-img {
+    height: 100%;
+    font-size: 0;
+
+    &-wrap {
+      display: block;
+    }
+
+    @include slide-visble($name:01,$width:109.5%,$duration:0.8s,$delay:0.5s,$bg-color:#fef5e0);
+
+    @include pc {
+      position: relative;
+    }
+
+    @include sp {
+      margin-top: 35px;
+      width: calc(100% + 12px);
+    }
+
+    &::after {
+      display: block;
+      position: absolute;
+      width: 109.5%;
+      height: 100%;
+      content: '';
+      top: 46px;
+      left: 64px;
+      z-index: -1;
+      background-color: $color-bg03;
+
+      @include sp {
+        width: calc(100% + 12px * 2);
+        top: 34.5%;
+        height: 70.5%;
+        left: -12px;
+      }
+    }
+  }
+
+  &-lead {
+    margin-top: 47px;
+    font-size: 1.6rem;
+
+    @include sp {
+      margin-top: calc(25 / 375 * 100%);
+    }
+  }
+
+  .button-block {
+    margin: 44px 0;
+
+    @include tb {
+      width: 55%;
+    }
+
+    @include sp {
+      margin-top: calc(26 / 375 * 100%);
+    }
+  }
+}

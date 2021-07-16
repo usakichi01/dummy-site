@@ -1,0 +1,30 @@
+.button-entry {
+  @extend %button;
+
+  background-color: $color-main-orange;
+  color: $color-dark;
+  max-width: 920px;
+  padding: 36.5px 10px;
+  font-size: 2.5rem;
+  line-height: (15/25);
+  box-shadow: 5px 5px 0 0 rgba($color-accent01, .7);
+
+  @include sp {
+    font-size: 2rem;
+    line-height: (15/20);
+    padding: 31.5px 10px;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 5px 9px 10px 0 rgba($color-accent01, .7);
+  }
+
+  @include hover-shine(4s);
+}
+
+.partner {
+  .button-entry {
+    background-color: $color-partner-main;
+  }
+}

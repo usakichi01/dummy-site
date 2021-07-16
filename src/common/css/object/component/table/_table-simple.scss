@@ -1,0 +1,74 @@
+.table-simple {
+  width: 100%;
+  overflow: hidden;
+
+  &-inner {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 25px 10px;
+
+    @include sp {
+      padding: 50px 10px 0;
+    }
+  }
+
+  .table {
+    &-row {
+      display: flex;
+
+      @include sp {
+        flex-direction: column;
+      }
+    }
+
+    &-data {
+      &-title, &-description {
+        vertical-align: top;
+        text-align: left;
+        background: none;
+        border: none;
+
+        @include pc {
+          padding: 38px 24px;
+        }
+
+        @include sp {
+          width: 100%;
+        }
+      }
+
+      &-title {
+        font-weight: 700;
+        font-size: 1.6rem;
+
+        @include pc {
+          width: 200px;
+          border-bottom: 1px solid $color-accent01;
+        }
+
+        @include sp {
+          color: $color-accent01;
+          background-color: $color-bg05;
+          padding: 10px;
+        }
+
+        .data {
+          &-name {
+            font-size: 1.6rem;
+          }
+        }
+      }
+
+      &-description {
+        @include pc {
+          width: calc(100% - 200px);
+          border-bottom: 1px solid $color-gray;
+        }
+
+        @include sp {
+          padding: 20px 3px 30px;
+        }
+      }
+    }
+  }
+}

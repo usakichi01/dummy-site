@@ -1,0 +1,7 @@
+@mixin fixed-bg($url) {
+  background-attachment: fixed;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url($url);
+}

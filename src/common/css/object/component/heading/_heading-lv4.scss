@@ -1,0 +1,28 @@
+.heading-lv4 {
+  font-size: 2rem;
+  line-height: (44/20);
+  font-weight: bold;
+  color: $color-dark;
+  padding-left: 24px;
+  position: relative;
+
+  &::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: $color-bg03;
+  }
+}
+
+.partner {
+  .heading-lv4 {
+    &::before {
+      background-color: $color-partner-bg02;
+    }
+  }
+}

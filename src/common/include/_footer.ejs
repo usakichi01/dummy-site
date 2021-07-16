@@ -1,0 +1,84 @@
+    <!-- footer -->
+    <footer id="footer" class="footer">
+      <%_ if (page != json.top) { _%>
+      <div class="breadcrumb pc">
+        <div class="breadcrumb-inner content-inner">
+          <ul class="breadcrumb-list">
+            <%_ if ( page['text'].length ) { _%>
+              <%_ for (var i = 0; i < page['text'].length - 1; i++) { _%>
+                <li><a href="<%- page['directory'][i] %>"><%- page['text'][i] %></a></li>
+              <%_ } _%>
+            <%_ } _%>
+            <li><%= page['title'] %></li>
+          </ul>
+        </div>
+      </div>
+      <%_ } _%>
+      <div class="footer-nav-wrap js-mega-menu">
+        <div class="content-inner col-box nav">
+          <div class="col-item">
+            <ul class="footer-nav">
+              <li class="footer-nav-item">
+                <a href="" class="footer-nav-title">MESSAGE<span class="footer-nav-title-sub">メッセージ</span></a>
+              </li>
+              <li class="footer-nav-item">
+                <a href="" class="footer-nav-title">ABOUT<span class="footer-nav-title-sub">××について</span></a>
+                <ul class="footer-nav-menu">
+                  <li><a href="" class="footer-nav-menu-link">タイトル</a></li>
+                  <li><a href="" class="footer-nav-menu-link">タイトル</a></li>
+                  <li><a href="" class="footer-nav-menu-link">タイトル</a></li>
+                  <li><a href="" class="footer-nav-menu-link">タイトル</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="col-item">
+            <ul class="footer-nav">
+              <li class="footer-nav-item">
+                <a href="" class="footer-nav-title">INTERVIEW<span class="footer-nav-title-sub">インタビュー</span></a>
+                <ul class="footer-nav-menu">
+                  <li><a href="" class="footer-nav-menu-link"></a></li>
+                  <li><a href="" class="footer-nav-menu-link">タイトル</a></li>
+                  <li><a href="" class="footer-nav-menu-link">タイトル</a></li>
+                  <li><a href="" class="footer-nav-menu-link">タイトル</a></li>
+                  <li><a href="" class="footer-nav-menu-link">タイトル</a></li>
+                  <li><a href="" class="footer-nav-menu-link">タイトル</a></li>
+                  <li><a href="" class="footer-nav-menu-link">タイトル</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="col-item">
+            <ul class="footer-nav">
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-title">WORKS<span class="footer-nav-title-sub">実績</span></a>
+              </li>
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-title">TIPS<span class="footer-nav-title-sub">技術情報</span></a>
+              </li>
+              <li class="footer-nav-item">
+                <a href="#" class="footer-nav-title">FAQ<span class="footer-nav-title-sub">よくある質問</span></a>
+              </li>
+              <li class="footer-nav-item -notitle">
+                <ul class="footer-nav-menu">
+                  <li><a href="/" target="_blank" class="footer-nav-menu-link -ext">外部サイト</a></li>
+                  <li><a href="/" target="_blank" class="footer-nav-menu-link -ext">外部サイト</a></li>
+                </ul>
+              </li>
+              <li class="footer-nav-item -sns">
+                <ul class="footer-nav-sns">
+                  <li class="footer-nav-sns-item"><a href="https://twitter.com/maxmouseinc" target="_blank"><img src="/common/images/icon_twitter.png" alt="Twitter 公式アカウント"></a></li>
+                  <li class="footer-nav-sns-item"><a href="https://www.facebook.com/maxmouseinc" target="_blank"><img src="/common/images/icon_facebook.png" alt="Facebook 公式アカウント"></a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-logo"><a href="/" class="d-flex"><img src="/common/images/logo.png" alt="Maxmouse" class="-corporate"></a></div>
+        <div class="footer-copyright">Copyright &copy; 2021 dummy. All Rights Reserved.</div>
+      </div>
+    </footer>
+    <!-- /.footer -->
+    </div>

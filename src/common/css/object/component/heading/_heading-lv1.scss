@@ -1,0 +1,27 @@
+.heading-lv1 {
+  font-size: 6rem;
+  line-height: (82/60);
+  font-weight: bold;
+  color: $color-dark;
+  font-family: $font-opensans;
+  text-align: center;
+
+  @include sp {
+    font-size: 4.2rem;
+    line-height: (57/42);
+  }
+
+  .heading-sub {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: (26/20);
+    display: block;
+    font-family: $font-family-base;
+
+    @include sp {
+      font-size: 1.8rem;
+      line-height: (21/18);
+      margin-top: 3px;
+    }
+  }
+}

@@ -1,0 +1,117 @@
+.top-mainvisual {
+  width: 100%;
+  background: top center / cover no-repeat url(/assets/images/recruit/mv_bg.jpg);
+  background-color: $color-bg01;
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+
+  @include pc {
+    min-height: calc(100vw * 0.56);
+    max-height: 840px;
+    max-width: 2000px;
+    margin: -116px auto;
+  }
+
+  @include sp {
+    background: top center / cover no-repeat url(/assets/images/recruit/mv_bg_sp.jpg);
+    margin-top: -56px;
+    padding-bottom: (35 / 375 * 100%);
+  }
+
+  &-inner {
+    position: relative;
+    height: calc(100vh - 140px);
+    max-height: 700px;
+
+    @include sp {
+      height: calc(100vh - 114px);
+    }
+  }
+
+  &-title {
+    animation: 1.5s ease-in-out both slide-right;
+
+    &-block {
+      position: absolute;
+
+      @include pc {
+        margin-left: 1.2%;
+        max-width: 744px;
+        width: 51.7%;
+        max-height: 780px;
+        top: 40%;
+      }
+
+      @include sp {
+        width: 93%;
+        margin-left: 3.2%;
+        bottom: 25px;
+      }
+
+      &::before {
+        position: absolute;
+        display: block;
+        content: '';
+        background: center / contain no-repeat url(/assets/images/recruit/mv_accent.png);
+        width: 59.23%;
+        padding-bottom: 422px;
+        z-index: -1;
+        left: 100px;
+        bottom: -50px;
+        animation: 1s ease-in-out 1.5s both fade-in;
+
+        @include sp {
+          width: (255 /375 * 100%);
+          left: -40px;
+          padding-bottom: 85%;
+        }
+      }
+    }
+
+    &-sub {
+      margin-right: 5px;
+      width: 43%;
+      animation: 1s ease-in-out 0.8s both slide-right;
+
+      @include pc {
+        text-align: right;
+        margin-left: auto;
+        margin-top: -10px;
+      }
+
+      @include pc {
+        text-align: left;
+      }
+    }
+  }
+
+  .scroll-nav {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    span {
+      font-family: $font-opensans;
+      font-size: 1.4rem;
+      line-height: (32/14);
+      font-weight: bold;
+      position: relative;
+      display: block;
+      animation-name: emphasis;
+      animation-iteration-count: infinite;
+      animation-duration: 1.5s;
+
+      &::after {
+        position: absolute;
+        display: block;
+        content: '';
+        height: 62px;
+        width: 2px;
+        background-color: $color-dark;
+        left: 50%;
+      }
+    }
+  }
+}

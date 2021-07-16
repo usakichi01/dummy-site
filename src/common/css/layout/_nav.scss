@@ -1,0 +1,286 @@
+.nav {
+  &.col-box {
+    display: flex;
+    justify-content: space-between;
+
+    @include sp {
+      flex-wrap: wrap;
+    }
+
+    .col-item {
+      width: auto;
+
+      @include sp {
+        width: (100%/2);
+      }
+
+      &:last-child {
+        width: 23.2%;
+
+        @include sp {
+          width: 100%;
+          margin-top: 22px;
+
+          .header, .footer {
+            &-nav {
+              display: flex;
+              flex-direction: column;
+              height: 270px;
+              flex-wrap: wrap;
+
+              &-item {
+                float: left;
+                width: 50%;
+
+                &:nth-child(2) {
+                  padding-bottom: 100px;
+                }
+
+                &:nth-child(3) {
+                  margin-top: 0;
+                }
+
+                &:nth-child(n + 3) {
+                  float: right;
+                }
+
+                &.-notitle {
+                  margin-top: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .header, .footer {
+    &-nav {
+      &-title {
+        font-weight: bold;
+        color: $color-light;
+        font-family: $font-opensans;
+
+        @include tb {
+          font-size: 3.2rem;
+        }
+
+        @include hover-color($color-accent01);
+
+        &-sub {
+          font-weight: bold;
+          display: block;
+          font-family: $font-family-base;
+          font-size: 1.6rem;
+          line-height: (26/16);
+
+          @include sp {
+            font-size: 1.2rem;
+            line-height: (17/12);
+          }
+        }
+      }
+
+      &-menu {
+        margin-top: 17px;
+
+        @include sp {
+          margin-top: 3px;
+        }
+
+        &-link {
+          color: $color-light;
+          position: relative;
+          padding-left: 1em;
+          display: block;
+
+          @include sp {
+            padding-left: .7em;
+            font-size: 1.2rem;
+            line-height: (40/14);
+          }
+
+          &:hover {
+            &::before {
+              opacity: 0;
+            }
+          }
+
+          &::before {
+            content: '';
+            display: block;
+            width: .5em;
+            height: 1px;
+            background-color: $color-light;
+            position: absolute;
+            top: 1.3em;
+            left: 0;
+            opacity: 1;
+            transition: .02s ease-in-out;
+
+            @include sp {
+              width: .3em;
+            }
+          }
+
+          @include hover-color($color-accent01);
+
+          &.-ext {
+            display: inline;
+            padding-left: 0;
+            font-weight: bold;
+
+            &::before {
+              display: none;
+            }
+
+            @include sp {
+              font-size: 1.4rem;
+            }
+
+            &::after {
+              position: absolute;
+              content: '';
+              width: 18px;
+              height: 14px;
+              background: center / contain no-repeat url(#{$img-path}icon_ext_white.png);
+              bottom: 4px;
+              right: -26px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .header {
+    &-nav {
+      margin-top: 45px;
+
+      @include sp {
+        margin-top: -4px;
+      }
+
+      &-title {
+        font-size: 4.8rem;
+        line-height: (65/48);
+
+        @include sp {
+          font-size: 3rem;
+          line-height: (43/32);
+        }
+
+        &-sub {
+          @include tb {
+            font-size: 1.4rem;
+          }
+
+          @include sp {
+            margin-top: -2px;
+          }
+        }
+      }
+
+      &-item {
+        &:nth-child(n + 2) {
+          margin-top: 57px;
+
+          @include sp {
+            margin-top: 28px;
+          }
+        }
+
+        &.-notitle {
+          margin-top: 35px;
+        }
+      }
+
+      &-menu {
+        @include sp {
+          margin-top: 5px;
+        }
+
+        &-link {
+          font-size: 1.6rem;
+          line-height: (40/16);
+        }
+      }
+    }
+  }
+
+  .footer {
+    &-nav {
+      &-title {
+        font-size: 4rem;
+        line-height: (55/40);
+
+        @include tb {
+          font-size: 3rem;
+        }
+
+        @include sp {
+          font-size: 2.8rem;
+          line-height: (38/28);
+        }
+      }
+
+      &-item {
+        &:nth-child(n + 2) {
+          margin-top: 65px;
+
+          @include sp {
+            margin-top: 32px;
+          }
+        }
+
+        &.-notitle {
+          margin-top: 40px;
+        }
+
+        &.-sns {
+          margin-top: 32px;
+        }
+      }
+
+      &-menu {
+        &-link {
+          font-size: 1.6rem;
+          line-height: (40/16);
+        }
+      }
+
+      &-sns {
+        display: flex;
+
+        @include sp {
+          justify-content: flex-end;
+        }
+
+        &-item {
+          & + .footer-nav-sns-item {
+            margin-left: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.partner {
+  .nav {
+    .header, .footer {
+      &-nav {
+        &-title {
+          @include hover-color($color-partner-accent01);
+        }
+
+        &-menu {
+          &-link {
+            @include hover-color($color-partner-accent01);
+          }
+        }
+      }
+    }
+  }
+}

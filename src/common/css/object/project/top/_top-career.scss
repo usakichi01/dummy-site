@@ -1,0 +1,130 @@
+.top-career {
+  padding-bottom: 33px;
+  padding-top: 73px;
+
+  @include sp {
+    padding-top: 48px;
+    padding-bottom: 0;
+    margin-top: -14px;
+    margin-bottom: -14px;
+  }
+
+  .content-inner {
+    position: relative;
+
+    &::before, &::after {
+      position: absolute;
+      display: block;
+      content: '';
+      background: center / contain no-repeat url(#{$img-path}bg_accent_dot01.png);
+      width: 249px;
+      padding-bottom: 238px;
+      z-index: -1;
+
+      @include sp {
+        width: (199 /375 * 100%);
+      }
+    }
+
+    &::before {
+      top: -131px;
+      left: -82px;
+
+      @include sp {
+        top: -30px;
+        left: -20px;
+      }
+    }
+
+    &::after {
+      right: -71px;
+      bottom: -78px;
+
+      @include sp {
+        display: none;
+      }
+    }
+  }
+
+  &-inner {
+    position: relative;
+
+    @include clearfix;
+
+    & > * {
+      @include pc {
+        width: (100%/2);
+
+        &:not(.top-career-img) {
+          padding-left: 4.5%;
+        }
+      }
+    }
+  }
+
+  .fl-left, .fl-right {
+    @include sp {
+      float: none !important;
+    }
+  }
+
+  &-img {
+    height: 100%;
+
+    &-wrap {
+      display: block;
+    }
+
+    @include slide-visble($name:02,$width:109.5%,$duration:0.8s,$delay:0.5s,$bg-color:#fef5e0);
+
+    @include pc {
+      position: relative;
+    }
+
+    @include sp {
+      margin-top: 35px;
+      width: calc(100% + 12px);
+    }
+
+    &::after {
+      display: block;
+      position: absolute;
+      width: 109.5%;
+      height: 100%;
+      content: '';
+      top: 46px;
+      left: -120px;
+      z-index: -1;
+      background-color: $color-bg02;
+
+      @include sp {
+        width: calc(100% + 12px * 2);
+        top: 34.5%;
+        height: 70.5%;
+        left: -12px;
+      }
+    }
+  }
+
+  &-lead {
+    margin-top: 47px;
+    font-size: 1.6rem;
+
+    @include sp {
+      margin-top: calc(25 / 375 * 100%);
+    }
+  }
+
+  .button-block {
+    margin: 44px 0;
+
+    @include tb {
+      width: 55%;
+      padding-left: 9.5%;
+    }
+
+    @include sp {
+      margin-top: calc(26 / 375 * 100%);
+    }
+  }
+}

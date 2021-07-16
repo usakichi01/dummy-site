@@ -1,0 +1,204 @@
+.top-interview {
+  background-color: $color-light;
+  padding-top: 0;
+
+  @include pc {
+    padding-bottom: 7px;
+  }
+
+  .content-inner {
+    position: relative;
+  }
+
+  &-picture {
+    @include pc {
+      position: absolute;
+      width: 32.3%;
+      background: center / cover no-repeat url(/assets/images/recruit/bg_interview.jpg);
+      padding-bottom: 6px;
+      height: 100%;
+      display: block;
+      content: '';
+    }
+
+    @include sp {
+      font-size: 0;
+    }
+  }
+
+  &-inner {
+    padding-top: 47px;
+  }
+
+  &-content {
+    @include pc {
+      width: (856 / 1200) * 100%;
+      margin-left: auto;
+      padding-left: 55px;
+      margin-top: 17px;
+    }
+
+    @include sp {
+      margin-top: 28px;
+    }
+  }
+
+  &-link {
+    position: relative;
+    width: 100%;
+    transition: .08s ease-in-out;
+
+    @include clearfix;
+    @include hover-underline;
+
+    &:hover {
+      @include pc {
+        &::before {
+          transform: translateX(13px);
+          width: 12%;
+        }
+
+        &::after {
+          transform: translateX(13px) translateY(-50%);
+        }
+      }
+    }
+
+    @include pc {
+      padding-right: 19%;
+    }
+
+    @include sp {
+      margin-top: 12px;
+    }
+
+    &::before, &::after {
+      position: absolute;
+      content: '';
+      display: block;
+      transition: .08s ease-in-out;
+    }
+
+    &::before {
+      height: 1px;
+      background-color: $color-dark;
+
+      @include pc {
+        max-width: 87px;
+        width: 10%;
+        top: 50%;
+        right: 59px;
+      }
+
+      @include sp {
+        left: 0;
+        bottom: -29px;
+        width: 87px;
+      }
+    }
+
+    &::after {
+      width: 0;
+      height: 11px;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 20px solid $color-dark;
+
+      @include pc {
+        top: 50%;
+        right: 35px;
+        transform: translateY(-50%);
+      }
+
+      @include sp {
+        left: 92px;
+        bottom: -34px;
+      }
+    }
+  }
+
+  &-list {
+    &-item {
+      padding: 10px 0;
+      border-bottom: 1px solid $color-dark;
+      min-height: 170px;
+      display: flex;
+      align-items: center;
+
+      @include sp {
+        padding: 24px 0 50px;
+      }
+    }
+
+    &-type {
+      font-size: 1.4rem;
+      line-height: (26/14);
+      font-weight: bold;
+      color: $color-light;
+      width: 88px;
+      height: 48px;
+      padding: 12px 10px;
+      text-align: center;
+      float: left;
+
+      &.-male {
+        background-color: #399cd1;
+      }
+
+      &.-female {
+        background-color: #f1577b;
+      }
+    }
+
+    &-profile {
+      font-size: 1.6rem;
+      margin-bottom: 5px;
+      float: left;
+
+      @include pc {
+        margin-left: 40px;
+        width: calc(100% - 88px - 40px);
+      }
+
+      @include sp {
+        font-size: 1.4rem;
+        margin-left: 10px;
+        width: calc(100% - 88px - 10px);
+      }
+    }
+
+    &-title {
+      font-size: 3rem;
+      font-weight: bold;
+      position: relative;
+
+      @include sp {
+        font-size: 2.4rem;
+      }
+
+      &-wrap {
+        float: left;
+
+        @include pc {
+          margin-top: 4px;
+          margin-left: 128px;
+        }
+      }
+    }
+  }
+
+  .button-block {
+    margin: 59px auto;
+    text-align: center;
+
+    @include sp {
+      margin: 50px auto;
+    }
+
+    .button {
+      @include pc {
+        margin-right: 35px;
+      }
+    }
+  }
+}
